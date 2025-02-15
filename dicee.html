@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="./images/dice6.png" />
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="./images/dice6.png" />
+      </div>
+    </div>
+  <script>
+    var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+    var image1 = "dice" + randomNumber1 + ".png";
+    var source1 = "images/" + image1; 
+    var img1 = document.querySelectorAll("img")[0];
+    img1.setAttribute("src", source1);
+    var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+    var image2 = "dice" + randomNumber2 + ".png";
+    var source2 = "images/" + image2; 
+    var img2 = document.querySelectorAll("img")[1];
+    img2.setAttribute("src", source2);
+    if( randomNumber1 > randomNumber2){
+      document.querySelector("h1").innerHTML="PLAYER 1 WINSSSSSSSSSSSSSSSSSSSSSSSSSSSS";
+    }
+    else if(randomNumber1 < randomNumber2){
+      document.querySelector("h1").innerHTML="PLAYER 2 WINSSSSSSSSSSSSSSSSSSSSSSSSSSSS";
+    }
+    else{
+      document.querySelector("h1").innerHTML="IT IS A DRAW:(";
+    }
+  </script>
+  </body>
+</html>
